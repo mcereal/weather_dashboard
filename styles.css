@@ -3,3 +3,70 @@
   justify-content: center;
   color: white;
 }
+
+.hidden {
+  display: none;
+}
+
+#detailDisplay {
+  background: #f8f9fa;
+  height: 40vh;
+  margin-top: 10px;
+}
+#citySearch {
+  background: #f8f9fa;
+}
+#fiveDayForecast {
+  background: #f8f9fa;
+  padding: 10px;
+}
+
+main {
+  background: #f8f9fa;
+}
+
+#searchBox {
+  margin-bottom: 10px;
+}
+
+#searchBtn {
+  margin-bottom: 10px;
+}
+
+#forecastDisplay {
+  max-width: 100%;
+  /* margin: 15px; */
+}
+#forecastRow {
+  margin: 1px;
+}
+
+.metrics {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.forecastBox {
+  background-color: #007bff !important;
+  color: white;
+  max-width: 75%;
+}
+/* #day2 {
+  margin-left: 30px;
+}
+
+#day3 {
+  margin-left: 30px;
+}
+
+#day4 {
+  margin-left: 30px;
+}
+#day5 {
+  margin-left: 30px;
+} */
+
+#weatherCardRow {
+  display: flex;
+  justify-content: space-between;
+}
