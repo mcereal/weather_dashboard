@@ -7,6 +7,10 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/ef412407d0.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -22,7 +26,7 @@
 
     <main class="container-fluid">
       <div id="mainView" class="row">
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
           <div id="citySearch">
             <h3>Search for a city</h3>
             <div class="input-group mb-3">
@@ -66,7 +70,7 @@
         </div>
         <div
           id="forecastDisplay"
-          class="col-xs-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 float-right"
+          class="col-xs-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 float-right"
         >
           <div id="forecastRow" class="row">
             <div id="detailDisplay" class="card col-12">
@@ -89,14 +93,15 @@
                 </div>
               </div>
             </div>
-            <div id="fiveDayForecast" class="col-12">
-              <div class="row">
+            <div id="fiveDayForecast" class="col-12 card">
+              <div class="row card-body">
                 <div class="col-12"><h2>5-Day Forecast:</h2></div>
               </div>
-              <div id="weatherCardRow" class="row w-75 p-3">
+              <div id="weatherCardRow" class="card-body row">
                 <div id="day1" class="card forecastBox">
                   <div class="card-body">
                     <h3 class="date">10/11/2020</h3>
+                    <div><i class="far fa-snowflake"></i></div>
                     <div><span>Temp: </span><span class="temp">90</span></div>
                     <div>
                       <span>Humidity: </span
@@ -107,6 +112,7 @@
                 <div id="day2" class="card forecastBox">
                   <div class="card-body">
                     <h3 class="date">10/12/2020</h3>
+                    <div><i class="fas fa-cloud-rain"></i></div>
                     <div><span>Temp: </span><span class="temp">90</span></div>
                     <div>
                       <span>Humidity: </span
@@ -117,6 +123,7 @@
                 <div id="day3" class="card forecastBox">
                   <div class="card-body">
                     <h3 class="date">10/13/2020</h3>
+                    <div><i class="fas fa-wind"></i></div>
                     <div><span>Temp: </span><span class="temp">90</span></div>
                     <div>
                       <span>Humidity: </span
@@ -127,6 +134,7 @@
                 <div id="day4" class="card forecastBox">
                   <div class="card-body">
                     <h3 class="date">10/14/2020</h3>
+                    <div><i class="fas fa-sun"></i></div>
                     <div><span>Temp: </span><span class="temp">90</span></div>
                     <div>
                       <span>Humidity: </span
@@ -137,6 +145,7 @@
                 <div id="day5" class="card forecastBox">
                   <div class="card-body">
                     <h3 class="date">10/15/2020</h3>
+                    <div><i class="fas fa-cloud-sun-rain"></i></div>
                     <div><span>Temp: </span><span class="temp">90</span></div>
                     <div>
                       <span>Humidity: </span
