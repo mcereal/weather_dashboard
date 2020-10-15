@@ -13,7 +13,6 @@ $(document).ready(function () {
 
   //creates new city object and displays it on page
   function clickHandler(userInput) {
-    console.log(CityWeatherInfo);
     let newSingleDayForecast = new CityWeatherInfo.CityWeatherInfo(
       weatherAPI.singleDay,
       weatherAPI.APIKey,
@@ -25,8 +24,10 @@ $(document).ready(function () {
       userInput
     );
     let newRenderForecast = new RenderWeatherInfo.RenderWeatherInfo(
-      newSingleDayForecast.getWeatherInfo()
+      newSingleDayForecast.getWeatherInfo(),
+      newFiveDayForecast.getWeatherInfo()
     );
     newRenderForecast.getRenderTemplate();
+    newRenderForecast.getRenderForecastTemplate();
   }
 });

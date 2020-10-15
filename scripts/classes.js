@@ -17,14 +17,18 @@ export default {
     }
   },
   RenderWeatherInfo: class RenderWeatherInfo {
-    constructor(city) {
+    constructor(city, cityFive) {
       this.city = city;
-      this.fiveDayRender = () => {
-        for (i = 1; i <= 5; i++) {}
+      this.cityFive = cityFive;
+      this.renderForecastTemplate = async (cityFive) => {
+        await Promise.resolve(cityFive).then((cityFive) => {
+          console.log(cityFive);
+          let cardDiv = $();
+          cityFive.list.forEach((item) => $("#weatherCardRow").append(cardDiv));
+        });
       };
       this.renderTemplate = async (city) => {
         await Promise.resolve(city).then((city) => {
-          console.log(city);
           $("#city").text(`${city.name}`);
           $("#date").text(` ${moment.unix(city.dt).format("MM/DD/YYYY")}`);
           $("#temperature").text(
@@ -40,6 +44,9 @@ export default {
     }
     getRenderTemplate() {
       return this.renderTemplate(this.city);
+    }
+    getRenderForecastTemplate() {
+      return this.renderForecastTemplate(this.cityFive);
     }
   },
 };
