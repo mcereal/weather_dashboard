@@ -11,22 +11,6 @@ $(document).ready(function () {
     clickHandler(userInput);
   });
 
-  async function getLatLon(cityData) {
-    await Promise.resolve(cityData).then((cityData) => {
-      let newUVInfo = new CityWeatherInfo.CityWeatherInfo(
-        weatherAPI.UVCall,
-        weatherAPI.APIKey,
-        `lat=${cityData.coord.lat}&lon=${cityData.coord.lon}`
-      );
-      async function renderUV(data) {
-        await Promise.resolve(data).then((data) => {
-          console.log(data.getWeatherInfo());
-        });
-      }
-      renderUV(newUVInfo);
-    });
-  }
-
   //creates new city object and displays it on page
   function clickHandler(userInput) {
     let newSingleDayForecast = new CityWeatherInfo.CityWeatherInfo(
