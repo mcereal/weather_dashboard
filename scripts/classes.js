@@ -77,7 +77,13 @@ export default {
           $("#humidity").text(`${city.main.humidity}`);
           $("#windSpeed").text(`${city.wind.speed} mph`);
           let cityName = $("<li class='list-group-item'>").text(`${city.name}`);
-          $("#cityHistoryList").append(cityName);
+          cityName.attr("id", `${city.name}`);
+          if (Object.keys(localStorage).includes(city.name)) {
+            null;
+          } else {
+            $("#cityHistoryList").prepend(cityName);
+            localStorage.setItem(`${city.name}`, `${city.name}`);
+          }
         });
       };
 

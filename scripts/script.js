@@ -5,10 +5,20 @@ import RenderWeatherInfo from "./classes.js";
 $(document).ready(function () {
   const weatherAPI = config;
 
+  for (const key of Object.keys(localStorage)) {
+    let cityName = $("<li class='list-group-item'>").text(`${key}`);
+    cityName.attr("id", `${key}`);
+    $("#cityHistoryList").append(cityName);
+  }
+
   //event listener
   $("#searchBtn").on("click", (event) => {
     let userInput = $("#searchBox").val().trim();
     clickHandler(userInput);
+  });
+
+  $("#cityHistoryList").on("click", (event) => {
+    clickHandler(event.target.id);
   });
 
   //creates new city object and displays it on page
