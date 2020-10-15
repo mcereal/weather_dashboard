@@ -22,9 +22,40 @@ export default {
       this.cityFive = cityFive;
       this.renderForecastTemplate = async (cityFive) => {
         await Promise.resolve(cityFive).then((cityFive) => {
-          console.log(cityFive);
-          let cardDiv = $();
-          cityFive.list.forEach((item) => $("#weatherCardRow").append(cardDiv));
+          const dayIndexPositions = [7, 15, 23, 31, 39];
+          const textIds = {
+            date: ["date1", "date2", "date3", "date4", "date5"],
+            temp: ["temp1", "temp2", "temp3", "temp4", "temp5"],
+            icon: ["icon1", "icon2", "icon3", "icon4", "icon5"],
+            humid: [
+              "humidityFuture1",
+              "humidityFuture2",
+              "humidityFuture3",
+              "humidityFuture4",
+              "humidityFuture5",
+            ],
+          };
+          for (let i = 0; i < 5; i++) {
+            $(`#${textIds.date[i]}`).text(
+              `${moment
+                .unix(cityFive.list[dayIndexPositions[i]].dt)
+                .format("MM/DD/YYYY")}`
+            );
+            $(`#${textIds.temp[i]}`).text(
+              `${Math.round(
+                (cityFive.list[dayIndexPositions[i]].main.temp - 273) * 1.8 + 32
+              )}`
+            );
+            $(`#${textIds.humid[i]}`).text(
+              `${cityFive.list[dayIndexPositions[i]].main.humidity}%`
+            );
+            $(`#${textIds.icon[i]}`).attr(
+              "src",
+              `http://openweathermap.org/img/wn/${
+                cityFive.list[dayIndexPositions[i]].weather[0].icon
+              }.png%`
+            );
+          }
         });
       };
       this.renderTemplate = async (city) => {

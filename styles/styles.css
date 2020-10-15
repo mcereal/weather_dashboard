@@ -52,18 +52,7 @@ main {
   width: 190px;
   margin-bottom: 30px;
 }
-#day1 {
-  margin-right: 30px;
-}
-
-#day2 {
-  margin-right: 30px;
-}
-
-#day3 {
-  margin-right: 30px;
-}
-#day4 {
+.day {
   margin-right: 30px;
 }
 
