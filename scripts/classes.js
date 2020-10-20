@@ -1,3 +1,4 @@
+//class for returning server JSON for different APIs
 export default {
   CityWeatherInfo: class CityWeatherInfo {
     constructor(APIUrl, APIKey, UVCall, userInput) {
@@ -36,6 +37,8 @@ export default {
       return this.uvInfoCall();
     }
   },
+
+  //class for rendering server data on page
   RenderWeatherInfo: class RenderWeatherInfo {
     constructor(city, cityFive, uvInfo) {
       this.uvInfo = uvInfo;

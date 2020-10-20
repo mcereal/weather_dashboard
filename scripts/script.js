@@ -5,13 +5,14 @@ import RenderWeatherInfo from "./classes.js";
 $(document).ready(function () {
   const weatherAPI = config;
 
+  //checks local storage for previously searched cities
   for (const key of Object.keys(localStorage)) {
     let cityName = $("<li class='list-group-item'>").text(`${key}`);
     cityName.attr("id", `${key}`);
     $("#cityHistoryList").append(cityName);
   }
 
-  //event listener
+  //event listeners
   $("#searchBtn").on("click", (event) => {
     let userInput = $("#searchBox").val().trim();
     clickHandler(userInput);
